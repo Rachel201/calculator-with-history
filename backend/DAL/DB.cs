@@ -9,6 +9,46 @@ namespace DAL
     {
         public Dictionary<string, List<Calculation>> DBCalculation { get; set; }
         public int id = 1;
+
+        // define the DB
+        public DB()
+        {
+            DBCalculation = new Dictionary<string, List<Calculation>>();
+        }
+
+        // delete calculation from DB
+        public List<Calculation> deleteItemFromDB(Calculation calc, string userID)
+        {
+            try
+            {
+                if (DBCalculation.ContainsKey(userID))
+                {
+                    var index = DBCalculation[userID].FindIndex(c => c.id == calc.id);
+                    if (index != -1)
+                    {
+
+                        DBCalculation[userID].RemoveAt(index);
+
+                    }
+
+
+                }
+                else
+                {
+                    throw new Exception(" calc not deleted");
+                }
+                return DBCalculation[userID];
+
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentOutOfRangeException(
+               "error in deleteItemFromDB", e);
+            }
+
+
+        }
+
         // update list in history db
         public List<Calculation> UpdateItemFromHistoryInDB(Calculation calc, string userID)
         {
@@ -16,12 +56,12 @@ namespace DAL
             {
                 if (DBCalculation.ContainsKey(userID))
                 {
-                    
+
                     var index = DBCalculation[userID].FindIndex(c => c.id == calc.id);
                     if (index == -1)
                     {
                         calc.id = ++id;
-                        DBCalculation[userID].Insert(0,calc);
+                        DBCalculation[userID].Insert(0, calc);
                     }
                     else
                     {
@@ -51,45 +91,7 @@ namespace DAL
 
         }
 
-        // delete calculation from DB
-        public List<Calculation> deleteItemFromDB(Calculation calc, string userID)
-        {
-            try
-            {
-                if (DBCalculation.ContainsKey(userID))
-                {
-                    var index = DBCalculation[userID].FindIndex(c => c.id == calc.id);
-                    if (index != -1)
-                    {
-
-                        DBCalculation[userID].RemoveAt(index);
-
-                    }
-
-
-                }
-                else
-                {
-                    throw new Exception(" calc not deleted");
-                }
-                return DBCalculation[userID];
-
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-
-            }
-
-
-        }
-
-        // init the DB
-        public DB()
-        { 
-            DBCalculation = new Dictionary<string, List<Calculation>>();
-        }
+       
     }
 
 }

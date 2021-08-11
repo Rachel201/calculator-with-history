@@ -32,7 +32,7 @@ namespace backend.Controllers
             return Ok(calculator.calculate(data, getUserID()));
         }
 
-        // return the addressIP of the user
+        // The function retun ip address of user
 
         public string getUserID()
         {

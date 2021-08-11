@@ -19,15 +19,12 @@ namespace backend.Controllers
         public ListHistoryControllerCalc(IListCalc _listCalc)
         {
             listCalc = _listCalc;
-          
-
         }     
         // get the Calculation History by userID
 
         [HttpGet("getListHistory")]
         public IActionResult getListHistory()
         {
-           
             return Ok(listCalc.GetHistoryCalculation(getUserID()));
         }
 
@@ -45,7 +42,7 @@ namespace backend.Controllers
         {
             return Ok(listCalc.updateListHistory(getUserID(), selectItem));
         }
-       // return the addressIP of the user
+       //The function is retun ip address of user
      public string   getUserID()
         {
             var ip = HttpContext.Connection.RemoteIpAddress;
