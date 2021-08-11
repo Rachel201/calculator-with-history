@@ -32,7 +32,7 @@ export const getResult = (dataCaculate:Icaculate)=> async (dispatch: any) =>{
 
 export const getCalcListHistory=()=>(dispatch:any)=>{
     debugger;
-    axios.get(basicUrl+"/listCalc/getListHistory") .then((res)=>{
+    axios.get(basicUrl+"/listHistory/getListHistory") .then((res)=>{
         if(res.status==200){
             dispatch({
                 type: HISTORY_LIST,
@@ -51,7 +51,7 @@ export const getCalcListHistory=()=>(dispatch:any)=>{
 export const removeItemFromList = async (selectCalc:any) =>(dispatch:any)=>{
     const data = selectCalc;
      axios.post(
-        "https://localhost:44394/api/listCalc/deleteCalculation", data
+        "https://localhost:44394/api/listHistory/deleteListHistory", data
     ).then((res) => {
         if (res.status == 200) {
            dispatch({

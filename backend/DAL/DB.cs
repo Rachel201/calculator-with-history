@@ -9,8 +9,8 @@ namespace DAL
     {
         public Dictionary<string, List<Calculation>> DBCalculation { get; set; }
         public int id = 1;
-        // add or update calculation to user history
-        public List<Calculation> UpdateListHistoryInDB(Calculation calc, string userID)
+        // update list in history db
+        public List<Calculation> UpdateItemFromHistoryInDB(Calculation calc, string userID)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace DAL
             catch (Exception e)
             {
                 throw new ArgumentOutOfRangeException(
-                    "Parameter index is out of range.", e);
+                    "Parameter UpdateListHistoryInDB.", e);
             }
 
 

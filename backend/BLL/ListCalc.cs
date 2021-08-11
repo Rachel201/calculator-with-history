@@ -33,7 +33,7 @@ namespace BLL
 
         public List<Calculation> updateListHistory(string userID, Calculation calc)
         {
-            return db.UpdateListHistoryInDB(calc, userID);
+            return db.UpdateItemFromHistoryInDB(calc, userID);
         }
     }
 }

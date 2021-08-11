@@ -29,7 +29,7 @@ namespace BLL
             foreach (var binaryOperator in Operators.Where(x => x.Name == calculation.Operator))
             {
                 calculation.Result= binaryOperator.calculate(calculation.Num1, calculation.Num2);
-                db.UpdateListHistoryInDB(calculation, userID);
+                db.UpdateItemFromHistoryInDB(calculation, userID);
                 return calculation.Result;
             }
             throw new Exception("error in caculate");
