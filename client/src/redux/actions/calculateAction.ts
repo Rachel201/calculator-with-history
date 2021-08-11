@@ -32,7 +32,7 @@ export const getResult = (dataCaculate:Icaculate)=> async (dispatch: any) =>{
 
 export const getCalcListHistory=()=>(dispatch:any)=>{
     debugger;
-    axios.get(basicUrl+"/listHistory/getListHistory") .then((res)=>{
+    axios.get(basicUrl+"/ListHistory/getListHistory") .then((res)=>{
         if(res.status==200){
             dispatch({
                 type: HISTORY_LIST,

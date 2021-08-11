@@ -10,22 +10,22 @@ namespace backend.Controllers
     [ProducesResponseType(StatusCodes.Status200OK)]
 
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController] 
     public class ListHistoryControllerCalc : Controller
     {
-        IListCalc listCalc;
+        IListHistory listHistory;
         string userId;
 
-        public ListHistoryControllerCalc(IListCalc _listCalc)
+        public ListHistoryControllerCalc(IListHistory _listHistory)
         {
-            listCalc = _listCalc;
+            listHistory = _listHistory;
         }     
         // get the Calculation History by userID
 
         [HttpGet("getListHistory")]
         public IActionResult getListHistory()
         {
-            return Ok(listCalc.GetHistoryCalculation(getUserID()));
+            return Ok(listHistory.GetHistoryCalculation(getUserID()));
         }
 
 
@@ -34,13 +34,13 @@ namespace backend.Controllers
 
         public IActionResult deleteListHistory(Calculation data)
         {
-            return Ok(listCalc.deleteListHistory(getUserID(), data));
+            return Ok(listHistory.deleteListHistory(getUserID(), data));
         }
         [HttpPost("updateListHistory")]
 
         public IActionResult updateListHistory(Calculation selectItem)
         {
-            return Ok(listCalc.updateListHistory(getUserID(), selectItem));
+            return Ok(listHistory.updateListHistory(getUserID(), selectItem));
         }
        //The function is retun ip address of user
      public string   getUserID()

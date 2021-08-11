@@ -7,7 +7,7 @@ using System.Text;
 namespace BLL
 {
  
-   public interface IListCalc
+   public interface IListHistory
     {
           List<Calculation> GetHistoryCalculation(string userID);
         List<Calculation> deleteListHistory(string userID, Calculation calc);

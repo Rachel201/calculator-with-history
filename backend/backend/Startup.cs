@@ -26,7 +26,7 @@ namespace backend
         {
             services.AddHttpContextAccessor();
             services.AddScoped(typeof(ICalculator), typeof(Calculator));
-            services.AddScoped(typeof(IListCalc), typeof(ListCalc));
+            services.AddScoped(typeof(IListHistory), typeof(ListCalc));
             services.AddSingleton<DB>();
             services.AddCors(options =>
             {

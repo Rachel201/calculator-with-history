@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BLL
 {
-   public class ListCalc : IListCalc
+   public class ListCalc : IListHistory
     {
         DB db;
 
