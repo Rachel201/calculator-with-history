@@ -11,12 +11,12 @@ namespace backend.Controllers
 
     [Route("api/[controller]")]
     [ApiController] 
-    public class ListHistoryControllerCalc : Controller
+    public class ListHistoryController : Controller
     {
         IListHistory listHistory;
         string userId;
 
-        public ListHistoryControllerCalc(IListHistory _listHistory)
+        public ListHistoryController(IListHistory _listHistory)
         {
             listHistory = _listHistory;
         }     
