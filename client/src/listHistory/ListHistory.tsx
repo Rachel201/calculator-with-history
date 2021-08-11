@@ -9,10 +9,10 @@ import { RootState } from '../redux/store';
 const ListHistory = () =>{
   const dispatch = useDispatch()
  const columns = [       
-  {key: 'column1', name: 'num1', fieldName: 'name', minWidth: 100, maxWidth: 200},
-  {key: 'column2', name: 'opertor', fieldName: 'value',minWidth: 100, maxWidth: 200 },
-  {key: 'column2', name: 'num2', fieldName: 'value',minWidth: 100, maxWidth: 200},
-  {key: 'column2', name: 'result', fieldName: '',minWidth: 100, maxWidth: 200 },
+  {key: 'column1', name: 'num1', fieldName: 'num1', minWidth: 100, maxWidth: 200},
+  {key: 'column2', name: 'opertor', fieldName: 'opertor',minWidth: 100, maxWidth: 200 },
+  {key: 'column2', name: 'num2', fieldName: 'num2',minWidth: 100, maxWidth: 200},
+  {key: 'column2', name: 'result', fieldName: 'result',minWidth: 100, maxWidth: 200 },
   {key: 'column2', name: 'delete', fieldName: 'delete',minWidth: 100, maxWidth: 200},
   {key: 'column2', name: 'update', fieldName: 'update',minWidth: 100, maxWidth: 200},
 ];
@@ -35,7 +35,6 @@ const updateItem = (item:any) =>{
 }
 const calculateReducer=useSelector(({calculateReducer}:any)=>calculateReducer)
 console.log("calculateReducer?.itemsHistory: "+calculateReducer?.itemsHistory?.itemsHistory)
-    console.log("calculateReducer: "+calculateReducer)
     return calculateReducer?.itemsHistory?(
       <div>
           <CustemList columns={columns} allItems={calculateReducer.itemsHistory} removeItem={removeItem} updateItem={updateItem}/>
