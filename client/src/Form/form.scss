@@ -1,0 +1,39 @@
+
+.selected-opertor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.text-field{
+   max-width: 60px;
+   min-width: 35px;
+}  
+
+.content-wrapper{
+  display: flex;
+ justify-content: center;
+ align-items: center;
+   margin-top: 5%;
+   
+}
+.from-wrapper {
+  min-width:20%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline-end: 3%;
+  padding-inline-start:3% ;
+  // position: relative;
+  // right: -27vw;
+}
+// .div_body{
+//   width: 98%;
+//   height: 100%;
+// }
+// .textFild2{
+//       position: relative;
+//       right: 40vw;
+// }
+.button{
+  margin-top: 0px;
+}

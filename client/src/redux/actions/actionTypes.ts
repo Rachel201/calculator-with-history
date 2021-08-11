@@ -1,0 +1,4 @@
+export const CACULATE ="CAlCULATE";
+export const ERROR_CALC="ERROR_CALC";
+export const HISTORY_LIST="HISTORY_LIST";
+export const UPDTATE_LIST_CALC='UPDTATE_LIST_CALC';

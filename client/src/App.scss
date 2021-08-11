@@ -1,0 +1,30 @@
+
+.grid-container{
+    display: grid;
+    margin-top: 0px;
+     grid-template-areas:
+        "header header  divider  header  header"
+        "left   left    divider  right   right"
+        "left   left    divider  right   right" 
+        "left   left    divider  right   right"
+        "left   left    divider  right   right" ;
+
+    overflow: auto;
+    min-height: 100%;
+
+   
+}
+@media only screen and (min-width: 600px){
+    .grid-container{
+        margin-top: 0px;
+        overflow: auto;
+        min-height: 100%;
+        grid-template-areas:
+        "header header   header  header  header"
+        "left   left    divider  right   right"
+        "left   left    divider  right   right" 
+        "left   left    divider  right   right"
+        "left   left    divider  right   right" ;
+
+      }
+} 

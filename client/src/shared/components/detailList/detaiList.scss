@@ -1,0 +1,25 @@
+
+.continar{
+  margin-top: 0px;
+  justify-content: center;
+  align-items: center;
+  padding-inline-end: 400px;
+  padding-inline-start: 400px;
+  padding-bottom: 20px;
+  .ms-Viewport {
+    .ms-DetailsList{
+    .ms-DetailsList-headerWrapper{
+      
+        div[class^='root'], div[class*='root']{
+          color: #1A1F71;
+          // width: 200px !important;
+          background-color:#E1E1E1
+          ;
+          &:hover {
+                   background-color:#E1E1E1 ;
+                 }
+        }
+      }
+   }
+  }
+}
