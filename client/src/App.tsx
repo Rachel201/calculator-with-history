@@ -10,6 +10,7 @@ function App() {
   return (
     // <div className="grid-container">
     <Provider store={store}> 
+    <h1>calculatoe with history</h1>
       <Form/>
       <ListHistory/>
     </Provider>

@@ -1,5 +1,5 @@
 import { Icaculate } from '../../models/typeCalculator';
-import {CACULATE, ERROR_CALC, HISTORY_LIST, UPDTATE_LIST_CALC} from '../actions/actionTypes';
+import {CACULATE, ERROR_CALC, HISTORY_LIST, REMOVE_LIST_CALC, UPDTATE_LIST_CALC} from '../actions/actionTypes';
 
 interface IResultFromServer{
    opartor?:string,
@@ -36,6 +36,11 @@ export default function(state=initialState,action:any){
                itemsHistory:action.listValue,
             }
          } 
+         case REMOVE_LIST_CALC:
+            return{
+               ...state,
+               itemsHistory:action.listValue,
+            }
          case UPDTATE_LIST_CALC:
          {
             return{ 

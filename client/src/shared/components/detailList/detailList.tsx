@@ -4,6 +4,8 @@ import { DefaultButton, Icon, IRenderFunction } from '@fluentui/react';
 import { useEffect, useState } from 'react';
 import "./detaiList.scss"
 import { Icons } from '../../Icon';
+import { useDispatch } from 'react-redux';
+import { removeItemFromList } from '../../../redux/actions/calculateAction';
 
 
 
@@ -40,23 +42,21 @@ const CustemList: React.FunctionComponent<IDetailsListState> = (props) => {
     columns: columns,
   });
 
-  console.log("state.items: "+state.items)
+  const dispatch = useDispatch()
+
   
-  const onChange = (ke: string, val: any) => {
-    console.log("col" + ke + "0" + val); 
-   }
- 
   const renderItemColumn = (item: any, index: any, column: any) => {
     let fieldContent = item[column.fieldName];
     console.log("fieldContent in culmn",fieldContent)
     switch (column.fieldName) {
         case 'delete':
           item = allItems[index]
-          return <DefaultButton text=""iconProps={Icons.delete} onClick={()=>removeItem(item)}/> 
+          return <DefaultButton text=""iconProps={Icons.delete} onClick={()=>dispatch(removeItemFromList(item))}/> 
         
           case 'update':
             item = allItems[index]
-            return <DefaultButton text=""iconProps={Icons.delete} onClick={()=>updateItem(item)}/> 
+            return <DefaultButton text=""iconProps={Icons.delete} onClick={()=>dispatch(updateItem(item))}/>
+             
           
         default:
             return <span >{fieldContent}</span>;

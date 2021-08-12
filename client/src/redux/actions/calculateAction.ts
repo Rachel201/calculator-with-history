@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Icaculate } from '../../models/typeCalculator';
 import { basicUrl } from '../../shared/config';
-import { CACULATE, ERROR_CALC, HISTORY_LIST, UPDTATE_LIST_CALC } from './actionTypes';
+import { CACULATE, ERROR_CALC, HISTORY_LIST, REMOVE_LIST_CALC, UPDTATE_LIST_CALC } from './actionTypes';
 
 
 export const getResult = (dataCaculate:Icaculate)=> async (dispatch: any) =>{
@@ -55,7 +55,7 @@ export const removeItemFromList = async (selectCalc:any) =>(dispatch:any)=>{
     ).then((res) => {
         if (res.status == 200) {
            dispatch({
-            type: CACULATE,
+            type: REMOVE_LIST_CALC,
             listValue: res.data
            })
         }
