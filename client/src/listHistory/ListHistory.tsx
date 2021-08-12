@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCalcListHistory, removeItemFromList } from '../redux/actions/calculateAction';
 import calculateReducer from '../redux/reducers/calculateReducer';
 import { Spinner, SpinnerSize } from '@fluentui/react';
-import CustemList from '../shared/components/detailList/DetailList';
 import { RootState } from '../redux/store';
+import CustemList from '../shared/components/detailList/detailList';
 
 const ListHistory = () =>{
   const dispatch = useDispatch()
